@@ -2,9 +2,20 @@ import React from 'react';
 import {Button, Text, View} from 'react-native';
 
 import {NavigationContainer} from '@react-navigation/native';
-import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import {
+  createNativeStackNavigator,
+  NativeStackScreenProps,
+} from '@react-navigation/native-stack';
 
-function HomeScreen({navigation}) {
+type RootStackParamList = {
+  Home: undefined;
+  Details: undefined;
+};
+
+const Stack = createNativeStackNavigator<RootStackParamList>();
+type HomeProps = NativeStackScreenProps<RootStackParamList, 'Home'>;
+
+function HomeScreen({navigation}: HomeProps) {
   return (
     <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
       <Text>Home Screen</Text>
@@ -23,8 +34,6 @@ function DetailsScreen() {
     </View>
   );
 }
-
-const Stack = createNativeStackNavigator();
 
 function App(): React.JSX.Element {
   return (
