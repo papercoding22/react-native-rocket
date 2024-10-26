@@ -39,7 +39,15 @@ const TabMap = {
 const BottomNavigator = () => {
   const activeTabs = [TabMap.Home, TabMap.Settings];
   return (
-    <Tab.Navigator>
+    <Tab.Navigator
+      screenOptions={({route}) => {
+        return {
+          tabBarIcon: ({focused, color, size}) => {
+            const tab = activeTabs.find(tab => tab.name === route.name);
+            return <Text style={{fontSize: 20}}>{tab.icon}</Text>;
+          },
+        };
+      }}>
       {activeTabs.map(tab => (
         <Tab.Screen key={tab.name} name={tab.name} component={tab.component} />
       ))}
