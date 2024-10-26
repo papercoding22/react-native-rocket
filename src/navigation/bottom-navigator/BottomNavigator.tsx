@@ -19,11 +19,30 @@ function SettingsScreen() {
 
 const Tab = createBottomTabNavigator();
 
+const TabMap = {
+  Home: {
+    name: 'Home',
+    component: HomeScreen,
+    icon: '🏠',
+  },
+  Settings: {
+    name: 'Settings',
+    component: SettingsScreen,
+    icon: '⚙️',
+  },
+};
+
+/**
+ * @description
+ * - Manages how the bottom navigation should be displayed.
+ */
 const BottomNavigator = () => {
+  const activeTabs = [TabMap.Home, TabMap.Settings];
   return (
     <Tab.Navigator>
-      <Tab.Screen name="Home" component={HomeScreen} />
-      <Tab.Screen name="Settings" component={SettingsScreen} />
+      {activeTabs.map(tab => (
+        <Tab.Screen key={tab.name} name={tab.name} component={tab.component} />
+      ))}
     </Tab.Navigator>
   );
 };
