@@ -2,6 +2,7 @@ import {useNavigation} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import React from 'react';
 import {Button, Text, View} from 'react-native';
+import BottomNavigator from './bottom-navigator/BottomNavigator';
 
 const AppStack = createNativeStackNavigator();
 
@@ -16,18 +17,17 @@ const ModalScreen = () => {
   );
 };
 
-const HomeScreen = ({navigation}) => (
-  <View>
-    <Text>Home Screen</Text>
-    <Button title="Open Modal" onPress={() => navigation.navigate('Modal')} />
-  </View>
-);
-
 const AppNavigator = () => {
   return (
     <AppStack.Navigator>
       <AppStack.Group>
-        <AppStack.Screen name="Home" component={HomeScreen} />
+        <AppStack.Screen
+          options={{
+            headerShown: false,
+          }}
+          name="BottomNavigator"
+          component={BottomNavigator}
+        />
       </AppStack.Group>
       {/* Grouping Modals */}
       <AppStack.Group screenOptions={{presentation: 'modal'}}>
