@@ -2,7 +2,7 @@ import {useNavigation} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import React from 'react';
 import {Button, Text, View} from 'react-native';
-import BottomNavigator from './bottom-navigator/BottomNavigator';
+import BottomTabContainer from './bottom-navigator/BottomTabContainer';
 
 const AppStack = createNativeStackNavigator();
 
@@ -26,7 +26,7 @@ const AppNavigator = () => {
             headerShown: false,
           }}
           name="BottomNavigator"
-          component={BottomNavigator}
+          component={BottomTabContainer}
         />
       </AppStack.Group>
       {/* Grouping Modals */}
