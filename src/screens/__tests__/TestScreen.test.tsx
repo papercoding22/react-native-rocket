@@ -5,6 +5,6 @@ import TestScreen from '../TestScreen';
 describe('TestScreen', () => {
   it('renders correctly', () => {
     render(<TestScreen />);
-    expect(screen.getByText('TestScreen')).toBeTruthy();
+    expect(screen.getByText('Variables!')).toBeTruthy();
   });
 });
