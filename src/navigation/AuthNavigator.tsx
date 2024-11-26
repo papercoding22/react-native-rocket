@@ -3,6 +3,7 @@ import {Text} from 'react-native';
 
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import AppNavigator from './AppNavigator';
+import TestGestureScreen from '../screens/TestGestureScreen';
 
 const AuthStack = createNativeStackNavigator();
 
@@ -39,6 +40,9 @@ const AuthNavigator = () => {
       {/* Shared screen */}
       <AuthStack.Group navigationKey={isAuthenticated ? 'user' : 'guest'}>
         <AuthStack.Screen name="Help" component={HelpScreen} />
+        {__DEV__ ? (
+          <AuthStack.Screen name="Test" component={TestGestureScreen} />
+        ) : null}
       </AuthStack.Group>
     </AuthStack.Navigator>
   );

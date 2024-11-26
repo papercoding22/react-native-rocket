@@ -6,13 +6,11 @@ import Logo from '../../assets/icons/egghead.svg';
 
 const HomeScreen = ({navigation}) => (
   <View>
-    <Text>Home Screen</Text>
-    <Logo width={100} height={100} />
     <Button title="Open Modal" onPress={() => navigation.navigate('Modal')} />
   </View>
 );
 
-function SettingsScreen() {
+function SettingsScreen({navigation}) {
   return (
     <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
       <Text>Settings!</Text>
