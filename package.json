@@ -13,6 +13,15 @@
     "test": "jest"
   },
   "dependencies": {
+    "@expo/html-elements": "^0.4.2",
+    "@gluestack-ui/actionsheet": "^0.2.46",
+    "@gluestack-ui/alert": "^0.1.15",
+    "@gluestack-ui/button": "^1.0.8",
+    "@gluestack-ui/nativewind-utils": "^1.0.23",
+    "@gluestack-ui/overlay": "^0.1.15",
+    "@gluestack-ui/spinner": "^0.1.14",
+    "@gluestack-ui/toast": "^1.0.7",
+    "@legendapp/motion": "^2.4.0",
     "@react-navigation/bottom-tabs": "^6.6.1",
     "@react-navigation/native": "^6.1.18",
     "@react-navigation/native-stack": "^6.11.0",

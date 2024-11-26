@@ -4,14 +4,15 @@ import {GestureHandlerRootView} from 'react-native-gesture-handler';
 import RootNavigator from './src/navigation/RootNavigator';
 
 import './global.css';
-import TestGestureScreen from './src/screens/TestGestureScreen';
+import { GluestackUIProvider } from './src/components/ui/gluestack-ui-provider';
 
 function App(): React.JSX.Element {
   return (
-    <GestureHandlerRootView style={{flex: 1}}>
-      {/* <RootNavigator /> */}
-      <TestGestureScreen />
-    </GestureHandlerRootView>
+    <GluestackUIProvider>
+      <GestureHandlerRootView style={{flex: 1}}>
+        <RootNavigator />
+      </GestureHandlerRootView>
+    </GluestackUIProvider>
   );
 }
 
